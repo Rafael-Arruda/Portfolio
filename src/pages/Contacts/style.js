@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Area = styled.form`
+export const Area = styled.div`
     display: flex;
     justify-content: space-evenly;
 
@@ -32,11 +32,16 @@ export const Area = styled.form`
         background-color: transparent;
     }
 
+    textarea {
+        height: 160px;
+    }
+
     button {
         width: 100px;
         padding: 10px 0;
         border: 2px solid #f9004d;
         border-radius: 4px;
         font-size: 1rem;
+        cursor: pointer;
     }
 `;
