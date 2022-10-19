@@ -7,10 +7,49 @@ export const Container = styled.div`
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 999;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+
+    .btn {
+        display: none;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 800px){
+        width: 100vw;
+        height: 12vh;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        .btn {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-right: 20px;
+
+            .line1, .line2, .line3 {
+                width: 23px;
+                height: 2px;
+                background-color: #fff;
+                transition: .3s all;
+                position: relative;
+            }
+            .line1 {
+                transform: ${props => props.status? 'rotate(135deg)' : ''};
+            }
+            .line2 {
+                display: ${props => props.status? 'none' : 'initial'};
+            }
+            .line3 {
+                transform: ${props => props.status? 'rotate(-135deg)' : ''};
+                top: ${props => props.status? '-7px' : '0'};
+            }
+        }
+    }
+
 `;
 
 export const Logo = styled.div`
@@ -45,6 +84,12 @@ export const Logo = styled.div`
         color: #f9004d;
         font-size: 1.5rem;
     }
+
+    @media screen and (max-width: 800px){
+        position: initial;
+        padding-top: 0;
+        padding-left: 25px;
+    }
 `;
 
 export const Nav = styled.nav`
@@ -73,5 +118,24 @@ export const Nav = styled.nav`
     a:hover::after {
         width: 100%;
         background-color: #f9004d;
+    }
+
+    @media screen and (max-width: 800px){
+        width: ${props => props.status? '60%' : '0%'};
+        height: 88vh;
+        background-color: #000;
+        position: fixed;
+        top: 12vh;
+        right: 0;
+        text-align: right;
+        padding-right: 20px;
+        transition: 1s all;
+        justify-content: flex-end;
+        visibility: ${props => props.status? 'visible' : 'hidden'};
+        overflow: hidden;
+        
+        ul {
+            overflow: hidden;
+        }
     }
 `;
