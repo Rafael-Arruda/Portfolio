@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Title from "../../components/Title";
 import Container from '../../components/Container';
 
@@ -12,6 +12,8 @@ import react from '../../assets/react.png';
 import typescript from '../../assets/typescript.png';
 import git from '../../assets/git.png';
 
+import { useContext } from "react";
+import { NavContext } from "../../contexts/navigation";
 
 export default function Skills() {
 
@@ -42,6 +44,12 @@ export default function Skills() {
         }
 
     ];
+
+    const {setStatus} = useContext(NavContext);
+
+    useEffect(() => {
+        setStatus(false);
+    }, [])
 
     return(
         <Container>

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import * as C from './style';
 import Container from "../../components/Container";
 import Title from "../../components/Title";
@@ -18,9 +18,18 @@ import starWars from '../../assets/star-wars.png';
 import crespos from '../../assets/crespos.png';
 import loginPage from '../../assets/login-page.png';
 
+import { useContext } from "react";
+import { NavContext } from "../../contexts/navigation";
+
 export default function Projects() {
 
     const [scrollX, setScrollX] = useState(0);
+
+    const {setStatus} = useContext(NavContext);
+
+    useEffect(() => {
+        setStatus(false);
+    }, [])
     
     const projects = [
         {

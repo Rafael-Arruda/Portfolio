@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as C from './style';
 import Container from "../../components/Container";
 
 import {FaLinkedinIn, FaGithub, FaInstagram} from 'react-icons/fa';
 
 import profile from '../../assets/home.png';
-import curriculum from '../../assets/curriculoRafael.pdf'
+import curriculum from '../../assets/curriculoRafael.pdf';
+
+import { useContext } from "react";
+import { NavContext } from "../../contexts/navigation";
 
 export default function Home() {
+
+    const {setStatus} = useContext(NavContext);
+
+    useEffect(() => {
+        setStatus(false);
+    }, [])
+
     return(
         <Container>
             <C.Area>

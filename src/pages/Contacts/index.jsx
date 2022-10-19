@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import * as C from './style';
 import Container from "../../components/Container";
 import Title from "../../components/Title";
@@ -7,11 +7,20 @@ import {AiOutlineMail, AiOutlineWhatsApp} from 'react-icons/ai';
 
 import emailjs from '@emailjs/browser';
 
+import { useContext } from "react";
+import { NavContext } from "../../contexts/navigation";
+
 export default function Contacts(){
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+
+    const {setStatus} = useContext(NavContext);
+
+    useEffect(() => {
+        setStatus(false);
+    }, [])
 
     function sendEmail(e) {
         e.preventDefault();

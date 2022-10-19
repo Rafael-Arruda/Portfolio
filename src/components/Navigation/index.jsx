@@ -1,11 +1,14 @@
-import React, {useState} from "react";
+import React from "react";
 import * as C from './style';
+
+import { useContext } from "react"; 
+import { NavContext } from "../../contexts/navigation"; 
 
 import { Link } from "react-router-dom";
 
 export default function Navigation() {
 
-    const [status, setStatus] = useState(false);
+    const {status, setStatus} = useContext(NavContext);
 
     function showMenu() {
         setStatus(!status);

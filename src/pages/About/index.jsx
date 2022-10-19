@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import * as C from './style';
 import Container from "../../components/Container";
 import Title from "../../components/Title";
 
+import { useContext } from "react";
+import { NavContext } from "../../contexts/navigation";
+
 import aboutImage from '../../assets/aboutImage.jpeg';
 
 export default function About() {
+
+    const {setStatus} = useContext(NavContext);
+
+    useEffect(() => {
+        setStatus(false);
+    }, [])
+
     return(
         <Container>
             <Title>About</Title>
