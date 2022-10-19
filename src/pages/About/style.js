@@ -7,7 +7,8 @@ export const Content = styled.div`
 
     p {
         max-width: 500px;
-        width: 80%;
+        min-width: 300px;
+        width: 50%;
         line-height: 22px;
         font-size: 1.2rem;
     }
@@ -23,5 +24,11 @@ export const Content = styled.div`
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    @media screen and (max-width: 1000px){
+        flex-direction: column-reverse;
+        gap: 30px;
+        padding: 30px 0;
     }
 `;

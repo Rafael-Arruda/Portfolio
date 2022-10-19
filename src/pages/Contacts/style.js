@@ -11,7 +11,7 @@ export const Area = styled.div`
         margin-bottom: 10px;
 
         span {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: gray;
         }
     }
@@ -23,7 +23,7 @@ export const Area = styled.div`
     }
 
     input, textarea {
-        width: 400px;
+        width: 340px;
         padding: 15px 10px;
         font-size: 1rem;
         outline: none;
@@ -43,5 +43,12 @@ export const Area = styled.div`
         border-radius: 4px;
         font-size: 1rem;
         cursor: pointer;
+    }
+
+    @media screen and (max-width: 1000px){
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 40px;
     }
 `;

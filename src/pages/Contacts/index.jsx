@@ -53,10 +53,12 @@ export default function Contacts(){
             <Title>Contatos</Title>
             <C.Area>
                 <div className="contacts">
+                    <h2>Meu email</h2>
                     <div className="email">
                         <AiOutlineMail size={25} color="#000"/>
                         <span>rafaelsilvaarruda72@gmail.com</span>
                     </div>
+                    <h2>Meu número</h2>
                     <div className="wpp">
                         <AiOutlineWhatsApp size={25} color="#000"/>
                         <span>(85)987162902</span>
